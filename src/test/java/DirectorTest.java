@@ -30,7 +30,7 @@ public class DirectorTest {
 
     @Test
     public void hasBudget() {
-        assertEquals(1000000, director.getBudget());
+        assertEquals(1000000, director.getBudget(), 0.01);
     }
 
     @Test
@@ -42,6 +42,12 @@ public class DirectorTest {
     @Test
     public void canPayBonus() {
         assertEquals(580, director.payBonus(), 0.01);
+    }
+
+    @Test
+    public void cannotLowerSalary() {
+        director.raiseSalary( -1000);
+        assertEquals(58000, director.getSalary());
     }
 
 }
