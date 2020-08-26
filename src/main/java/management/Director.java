@@ -12,4 +12,10 @@ public class Director extends Manager {
     public double getBudget() {
         return budget;
     }
+
+    @Override
+    public double payBonus() {
+        double directorBonus = super.getSalary() * 0.02;
+        return directorBonus;
+    }
 }
